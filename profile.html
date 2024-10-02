@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Maker</title>
+
+    <style>
+
+      *{ 
+         box-sizing: border-box;
+      }
+      body{
+         height: 100%;
+         margin:0;
+         background: linear-gradient(to right , #8dab7f, #788c63, #145b26);
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+      }
+
+      .Title{
+        font-family: Verdana;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color:#d9d3d3;
+      }
+
+      .card{
+        height: 550px;
+        width: 940px;
+        background-color: #d9d3d3;
+        display: flex;
+        align-self: center;
+        margin: 50px;
+        padding: 20px;
+        border-radius: 30px;
+        -webkit-box-shadow: 14px 10px 5px 1px rgba(0,0,0,0.54);
+        -moz-box-shadow: 14px 10px 5px 1px rgba(0,0,0,0.54);
+        box-shadow: 14px 10px 5px 1px rgba(0,0,0,0.54); 
+      }
+
+      .picture{
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+
+      }
+
+      .photo-upload{
+        margin: 20px;
+        height:170px;
+        width: 170px;
+        background-color: rgb(222, 238, 248);
+        border-radius: 170px;
+        align-self: center;
+      }
+
+      .upload-button{
+        background-color: bisque;
+        width: 200px;
+        height: 45px;
+        text-align: center;
+        font-size: 23px;
+        font-family: Tahoma;
+        border-radius: 30px;
+        border-color: bisque;
+        transition: color;
+      }
+
+      .upload-button:hover{
+        color: rgb(42, 67, 47);
+        transition-duration: 0.7s;
+      }
+
+      .personal-info{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+      }
+      .info input{
+        height: 35px;
+        width: 290px;
+        font-size: 20px;
+        margin: 15px;
+        border-radius: 10px;
+        border: none;
+        background-color: beige;
+      }
+
+      .contact input{
+        height: 35px;
+        width: 290px;
+        font-size: 20px;
+        margin: 15px;
+        border-radius: 10px;
+        border: none;
+        background-color: beige;
+      }
+
+      .submit{
+        display: flex;
+        justify-content: center;
+      }
+      .submit-button{
+        background-color: rgba(187, 96, 57, 0.823);
+        width: 200px;
+        height: 45px;
+        text-align: center;
+        font-size: 23px;
+        font-family: Tahoma;
+        border-radius: 30px;
+        border-color: rgba(187, 96, 57, 0.823);
+      }
+    </style>
+</head>
+
+<body>
+
+
+
+<div class="Title">
+    <H1>PROFILE UPDATE</H1>  
+</div>
+
+<div class="card">
+    <div class="picture">
+        <div class="photo-upload"> </div>
+        <button class="upload-button"> Update Photo</button>
+    </div>
+    <div class="personal-info">
+    <div class="info">
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+    </div>
+    <div class="contact">
+        <input type="text" placeholder="Phone Number">
+        <input type="text" placeholder="Address">
+    </div>
+    <div class="submit">
+    <button class="submit-button">Submit</button>
+    </div>
+    </div>
+</div>
+</body>
+</html>

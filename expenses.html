@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses</title>
+<style>
+     *{ 
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100%;
+        margin: 10px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right , #8dab7f, #788c63, #145b26);
+        font-family: Tahoma;
+      }
+
+
+      .profile{
+         height: 770px;
+         width: 350px;
+         background-color: #d9d3d3;
+         margin: 20px;
+         padding: 10px;
+         border-radius: 20px;
+         opacity: 90%;
+      }
+
+      .profile-content{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+
+      .picture{
+         margin: 20px;
+         height:170px;
+         width: 170px;
+         background-color: rgb(222, 248, 227);
+         border-radius: 170px;
+         align-self: center;
+      }
+
+      h4 {
+         margin: 20px 10px;
+         font-size: 26px;
+         color: rgb(11, 31, 15);
+         transition: color 1.5s, transform 0.4s ease;
+      }
+
+      h4:hover{
+         color:#668238;
+         transform: scale(1.3);
+      }
+
+      .box{
+        height: 770px;
+        width: 940px;
+        background-color: #d9d3d3;
+        display: flex;
+        flex-direction: column;
+        margin: 50px;
+        padding: 20px;
+        border-radius: 30px;
+      }
+
+      .expense-title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 28px;
+        width: auto;
+        height: 45px;
+        background-color: cornsilk;
+        border: 5px solid cornsilk;
+        border-radius: 10px;
+      }
+
+      .add-expenses{
+        margin-top: 50px;
+        display:flex;
+        flex-direction: row;
+
+      }
+
+      .form-expenses{
+        display:flex;
+        justify-content: center;
+        align-items: baseline;
+        flex-direction: column;
+      }
+
+      input{
+        height: 75px;
+        width: 320px;
+        font-size: 22px;
+        margin: 15px;
+        border-radius: 10px;
+        border: none;
+        background-color: beige;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+     }
+
+      .desc-expenses{
+        width: 320px;
+        height: 200px;
+        font-size: 22px;
+        margin: 15px;
+        border-radius: 10px;
+        border: none;
+        resize: none;
+        background-color: beige;
+      }
+
+      .submit-button{
+        background-color: rgba(187, 96, 57, 0.823);
+        width: 200px;
+        height: 45px;
+        text-align: center;
+        font-size: 23px;
+        font-family: Tahoma;
+        border-radius: 30px;
+        border-color: rgba(187, 96, 57, 0.823);
+      }
+
+      .query-expenses{
+        margin: 20px 10px;
+        display: flex;
+        flex-direction: row;
+        width: 490px;
+        height: 510px;
+        border: 2px solid cornsilk;
+        border-radius: 9px;
+
+      }
+
+
+</style>
+</head>
+<body>
+    <div class="profile" id="profile">
+        <div class="profile-content">
+           <div class="picture">
+           </div>
+           <h4> Dashboard </h4>
+           <h4> Profile </h4>
+           <h4> Expenses</h4>
+           <h4> Income </h4>
+           <h4> Settings </h4>
+           <h4> FAQs </h4>
+           <h4> Sign-Out </h4>
+        </div>
+      </div>
+
+    <div class="box">
+        <div class="expense-title"> Total Expenses</div>
+        <div class="add-expenses">
+            <div class="form-expenses">
+            <input type="text" placeholder="Enter Title">
+            <input type="number" placeholder="Enter Amount">
+            <input type="datetime" placeholder="Enter Date">
+            <textarea class="desc-expenses" placeholder="Enter description"></textarea>
+            <button class="submit-button">Add Expenses</button>
+            </div>
+            <div class="query-expenses">
+            </div>
+    </div>
+  
+
+</body>
+</html>
