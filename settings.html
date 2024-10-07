@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expenses</title>
-
+    <title>Settings</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&display=swap" rel="stylesheet">   
+</head>
 <style>
      *{ 
         box-sizing: border-box;
       }
-      
+
       body{
          height: 100%;
          margin:10px 40px;
@@ -78,101 +78,11 @@
         animation: myAnim 1.6s ease 0s 1 normal none;
       }
 
-      .expense-title{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 28px;
-        width: auto;
-        height: 45px;
-        background-color: cornsilk;
-        border: 5px solid cornsilk;
-        border-radius: 10px;
-      }
-
-      .add-expenses{
-        margin-top: 50px;
-        display:flex;
-        flex-direction: row;
-
-      }
-
-      .form-expenses{
-        display:flex;
-        justify-content: center;
-        align-items: baseline;
-        flex-direction: column;
-      }
-
-      input{
-        height: 75px;
-        width: 320px;
-        font-size: 22px;
-        margin: 15px;
-        border-radius: 10px;
-        border: none;
-        background-color: beige;
-        font-family: "Glegoo", serif;
-        font-weight: 700;
-        font-style: normal;
-      }
-
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-     }
-
-      .desc-expenses{
-        width: 320px;
-        height: 200px;
-        font-size: 22px;
-        margin: 15px;
-        border-radius: 10px;
-        border: none;
-        resize: none;
-        background-color: beige;
-        font-family: "Glegoo", serif;
-        font-weight: 700;
-        font-style: normal;
-      }
-
-      .submit-button{
-        background-color: rgba(187, 96, 57, 0.823);
-        width: 200px;
-        height: 45px;
-        text-align: center;
-        font-size: 23px;
-        font-family: Tahoma;
-        border-radius: 30px;
-        border-color: rgba(187, 96, 57, 0.823);
-      }
-
-      .query-expenses{
-        margin: 20px 10px;
-        display: flex;
-        flex-direction: row;
-        width: 490px;
-        height: 510px;
-        border: 2px solid cornsilk;
-        border-radius: 9px;
-
-      }
-
-      @keyframes myAnim {
-	         0% {
-		           opacity: 0;
-		           transform: scale(0.6);
-	          }
-
-          	100% {
-		            opacity: 1;
-		            transform: scale(1);
-	          }
-        }
 
 
-@media screen and (max-width: 1024px) {
+
+
+      @media screen and (max-width: 1024px) {
     .profile {
         width: 270px;
     }
@@ -220,11 +130,6 @@
         font-size: 20px;
         margin: 10px;
     }
-
-    .query-income{
-      display:flex;
-      flex-direction: column;
-    }
 }
 
 @media screen and (max-width: 480px) {
@@ -248,39 +153,39 @@
     }
 }
 
+@keyframes myAnim {
+	         0% {
+		           opacity: 0;
+		           transform: scale(0.6);
+	          }
+
+          	100% {
+		            opacity: 1;
+		            transform: scale(1);
+	          }
+        }
+
 
 
 </style>
-</head>
+
 <body>
     <div class="profile" id="profile">
         <div class="profile-content">
            <div class="picture">
            </div>
            <h4><a href="dashboard.html"> Dashboard </a></h4>
-           <h4><a href="profile.html"> Profile </a></h4>
-           <h4><a href="expenses.html"> Expenses</a></h4>
-           <h4><a href="income.html"> Income </a></h4>
-           <h4><a href="settings.html"> Settings </a></h4>
-           <h4><a href="about.html"> About </a></h4>
-           <h4><a href="signout.html"> Sign-Out </a></h4>
+         <h4><a href="profile.html"> Profile </a></h4>
+         <h4><a href="expenses.html"> Expenses</a></h4>
+         <h4><a href="income.html"> Income </a></h4>
+         <h4><a href="settings.html"> Settings </a></h4>
+         <h4><a href="about.html"> About </a></h4>
+         <h4><a href="signout.html"> Sign-Out </a></h4>
         </div>
       </div>
 
     <div class="box">
-        <div class="expense-title"> Total Expenses</div>
-        <div class="add-expenses">
-            <div class="form-expenses">
-            <input type="text" placeholder="Enter Title">
-            <input type="number" placeholder="Enter Amount">
-            <input type="datetime" placeholder="Enter Date">
-            <textarea class="desc-expenses" placeholder="Enter description"></textarea>
-            <button class="submit-button">Add Expenses</button>
-            </div>
-            <div class="query-expenses">
-            </div>
-    </div>
-  
 
+    </div>
 </body>
 </html>

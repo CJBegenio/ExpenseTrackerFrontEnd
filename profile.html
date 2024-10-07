@@ -4,35 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Maker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&display=swap" rel="stylesheet">   
+     <style>
 
-    <style>
-
-      *{ 
-         box-sizing: border-box;
-      }
       body{
          height: 100%;
-         margin:0;
+         margin:10px 40px;
          background: linear-gradient(to right , #8dab7f, #788c63, #145b26);
          display: flex;
-         flex-direction: column;
          justify-content: center;
          align-items: center;
+         font-family: "Glegoo", serif;
+         font-weight: 700;
+         font-style: normal;
       }
-
-      .Title{
-        font-family: Verdana;
+      .profile {
         display: flex;
         justify-content: center;
-        text-align: center;
-        color:#d9d3d3;
+        border-radius: 20px; 
+        height: 750px;
+        width: 330px;
+        background: linear-gradient(to left top, #779564, #90a97a, #aabe92, #c3d3aa, #dde9c3);
+        -webkit-box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7);
+        -moz-box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7); 
+        box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7);
+        animation: myAnim 1.6s ease 0s 1 normal none;
+      }
+
+      .profile .picture {
+        height: 150px;
+        width: 150px;
+        background-color: rgb(222, 248, 227);
+        border-radius: 50%;
+      }
+
+      .profile h4{
+       display: flex;
+       justify-content: center;
+       color: rgba(115,0,0,0.7);
+    
+      }
+
+      .profile h4 a {
+        font-size: 24px;
+        text-decoration: none;
+        color: rgb(11, 31, 15);
+        transition: color 0.6s ease, transform 0.4s ease;
+      }
+
+      .profile h4 a:hover {
+        color: #eaf4da;
+        transform: scale(1.2);
       }
 
       .card{
-        height: 550px;
+        height: 570px;
         width: 940px;
-        background-color: #d9d3d3;
+        background-color: #c1cd88;
         display: flex;
+        flex-direction: row;
         align-self: center;
         margin: 50px;
         padding: 20px;
@@ -40,6 +72,7 @@
         -webkit-box-shadow: 14px 10px 5px 1px rgba(0,0,0,0.54);
         -moz-box-shadow: 14px 10px 5px 1px rgba(0,0,0,0.54);
         box-shadow: 14px 10px 5px 1px rgba(0,0,0,0.54); 
+        animation: myAnim 1.6s ease 0s 1 normal none;
       }
 
       .picture{
@@ -84,20 +117,14 @@
         height: 35px;
         width: 290px;
         font-size: 20px;
-        margin: 15px;
+        margin: 12px;
         border-radius: 10px;
         border: none;
         background-color: beige;
       }
 
-      .contact input{
-        height: 35px;
-        width: 290px;
-        font-size: 20px;
-        margin: 15px;
-        border-radius: 10px;
-        border: none;
-        background-color: beige;
+      .age{
+        width: 43px;
       }
 
       .submit{
@@ -105,15 +132,29 @@
         justify-content: center;
       }
       .submit-button{
-        background-color: rgba(187, 96, 57, 0.823);
+        background-color: rgba(100, 192, 43, 0.823);
         width: 200px;
         height: 45px;
         text-align: center;
         font-size: 23px;
         font-family: Tahoma;
         border-radius: 30px;
-        border-color: rgba(187, 96, 57, 0.823);
+        border-color: rgba(100, 192, 43, 0.823);
       }
+
+      @keyframes myAnim {
+	         0% {
+		           opacity: 0;
+		           transform: scale(0.6);
+	          }
+
+          	100% {
+		            opacity: 1;
+		            transform: scale(1);
+	          }
+        }
+
+
     </style>
 </head>
 
@@ -121,9 +162,20 @@
 
 
 
-<div class="Title">
-    <H1>PROFILE UPDATE</H1>  
+<div class="profile" id="profile">
+  <div class="profile-content">
+     <div class="picture">
+     </div>
+     <h4><a href="dashboard.html"> Dashboard </a></h4>
+     <h4><a href="profile.html"> Profile </a></h4>
+     <h4><a href="expenses.html"> Expenses</a></h4>
+     <h4><a href="income.html"> Income </a></h4>
+     <h4><a href="settings.html"> Settings </a></h4>
+     <h4><a href="about.html"> About </a></h4>
+     <h4><a href="signout.html"> Sign-Out </a></h4>
+  </div>
 </div>
+
 
 <div class="card">
     <div class="picture">
@@ -135,14 +187,22 @@
         <input type="text" placeholder="First Name" required>
         <input type="text" placeholder="Last Name" required>
     </div>
-    <div class="contact">
+    <div class="info">
         <input type="text" placeholder="Phone Number">
         <input type="text" placeholder="Address">
     </div>
+    <div class="info">
+      <input type="text" class="age"  placeholder="Age">
+      <input type="text" placeholder="Occupation">
+  </div>
     <div class="submit">
-    <button class="submit-button">Submit</button>
+    <button class="submit-button">Update</button>
     </div>
     </div>
 </div>
+
+
 </body>
+
+
 </html>
