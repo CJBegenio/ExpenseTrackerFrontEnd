@@ -37,11 +37,9 @@
         animation: myAnim 1.6s ease 0s 1 normal none;
       }
 
-      .profile .picture {
-        height: 150px;
-        width: 150px;
-        background-color: rgb(222, 248, 227);
-        border-radius: 50%;
+      .profile h3{
+        font-size: 33px;
+        color: #145b26;
       }
 
       .profile h4{
@@ -159,6 +157,52 @@
 
       }
 
+      /* POP-UP*/
+
+      .modal {
+        border-radius: 10px;
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+    }
+
+    /* Modal content */
+    .modal-content {
+        background-color: #fff;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Close button (X) */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .error {
+            color: red;
+            font-size: 14px;
+        }
+
       @keyframes myAnim {
 	         0% {
 		           opacity: 0;
@@ -185,40 +229,39 @@
     }
 }
 
-@media screen and (max-width: 768px) {
-    body {
-        flex-direction: column;
-        margin: 10px 20px;
-    }
 
-    .box {
-        width: 100%;
-        margin: 20px 0;
-        height: 100%;
-        flex-direction: column;
-    }
+@media screen and (max-width: 758px) {
 
-    .profile-content{
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+.profile-content{
          display: flex;
          flex-direction: row;
+         margin: 20px;
+         font-size: 15px;
       }
 
-    .profile {
+      .profile {
         width: 100%;
         height: auto;
         margin: 20px 0;
         overflow-x: auto;
         overflow-y: hidden;
+        white-space: nowrap;
+        display: inline-block;
+    }
+    
+    h3{
+        display: none;
     }
 
-    .picture {
-        height: 120px;
-        width: 120px;
-    }
-
-    h4{
-        font-size: 20px;
-        margin: 10px;
+    h4 a{
+        margin-right: 20px;
+        text-align: center;
     }
 
     .query-income{
@@ -237,11 +280,6 @@
         margin: 10px 10px;
     }
 
-    .picture {
-        height:60px;
-        width: 60px;
-    }
-
     h4{
         font-size: 18px;
         margin: 5px;
@@ -255,15 +293,13 @@
 <body>
     <div class="profile" id="profile">
         <div class="profile-content">
-           <div class="picture">
-           </div>
+          <h3>BUDGET BUDDY</h3>
            <h4><a href="dashboard.html"> Dashboard </a></h4>
-           <h4><a href="profile.html"> Profile </a></h4>
            <h4><a href="expenses.html"> Expenses</a></h4>
            <h4><a href="income.html"> Income </a></h4>
            <h4><a href="settings.html"> Settings </a></h4>
            <h4><a href="about.html"> About </a></h4>
-           <h4><a href="signout.html"> Sign-Out </a></h4>
+           <h4><a href="signout.html"> Sign Out </a></h4>
         </div>
       </div>
 
@@ -271,16 +307,99 @@
         <div class="expense-title"> Total Expenses</div>
         <div class="add-expenses">
             <div class="form-expenses">
-            <input type="text" placeholder="Enter Title">
-            <input type="number" placeholder="Enter Amount">
-            <input type="datetime" placeholder="Enter Date">
-            <textarea class="desc-expenses" placeholder="Enter description"></textarea>
-            <button class="submit-button">Add Expenses</button>
+            <input type="text" id="expensesTitle"  placeholder="Enter Title">
+            <input type="number" id="expensesAmount" placeholder="Enter Amount">
+            <input type="date" id="expensesDate" placeholder="Enter Date">
+            <textarea class="desc-expenses"  id="expensesDesc" placeholder="Enter description"></textarea>
+            <button onclick="showPopup()" class="submit-button">Add Expenses</button>
             </div>
             <div class="query-expenses">
             </div>
+
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                  <span class="close" onclick="closePopup()">&times;</span>
+                  <p id="popupText"></p>
+              </div>
+          </div>
+
+          <p id="errorMessage" class="error"></p>
+
     </div>
-  
+  <script>
+    // Function to display the modal popup
+
+    function validateInputs() {
+            var decimal = document.getElementById("expensesAmount").value;
+            var date = document.getElementById("expensesDate").value;
+            var decimalRegex = /^[0-9]+(\.[0-9]+)?$/; // Regex for decimal validation
+
+            // Validate decimal input
+            if (!decimalRegex.test(decimal)) {
+                document.getElementById("errorMessage").innerHTML = "Please enter a valid decimal number.";
+                return false;
+            }
+
+            // Validate date input
+            if (!date) {
+                document.getElementById("errorMessage").innerHTML = "Please enter a valid date.";
+                return false;
+            }
+
+            // Clear error message if validation passes
+            document.getElementById("errorMessage").innerHTML = "";
+            return true;
+        }
+
+
+    function showPopup() {
+        // Get the value from the textbox
+        var title = document.getElementById("expensesTitle").value;
+        var amount = document.getElementById("expensesAmount").value;
+        var date = document.getElementById("expensesDate").value;
+        var desc = document.getElementById("expensesDesc").value;
+        var decimalRegex = /^[0-9]+(\.[0-9]+)?$/;
+
+        // Check if the input is not empty
+        if (title && amount && date && desc) {
+            // Show the modal
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+            
+            // Display the input inside the modal
+            document.getElementById("popupText").innerHTML = "Added Successfully";
+
+            clearTextboxes();
+
+        } else {
+          var modal = document.getElementById("myModal");
+          modal.style.display = "block";
+
+           document.getElementById("popupText").innerHTML = "Please fill all fields";
+        }
+    }
+
+    // Function to close the modal
+    function closePopup() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    function clearTextboxes() {
+            document.getElementById("expensesTitle").value = "";
+            document.getElementById("expensesAmount").value = "";
+            document.getElementById("expensesDate").value = "";
+            document.getElementById("expensesDesc").value = "";
+        }
+
+    // Close the modal if the user clicks anywhere outside of the modal content
+    window.onclick = function(event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+  </script>
 
 </body>
 </html>

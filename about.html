@@ -43,6 +43,11 @@
         border-radius: 50%;
       }
 
+      .profile h3{
+        font-size: 33px;
+        color: #145b26;
+      }
+
       .profile h4{
        display: flex;
        justify-content: center;
@@ -71,6 +76,7 @@
         margin: 50px;
         padding: 20px;
         border-radius: 30px;
+        overflow-y: scroll;
         -webkit-box-shadow: 14px 10px 5px 1px rgba(0,0,0,0.54);
         -moz-box-shadow: 14px 10px 5px 1px rgba(0,0,0,0.54);
         box-shadow: 14px 10px 5px 1px rgba(0,0,0,0.54); 
@@ -84,7 +90,7 @@
       }
 
       h3{
-         align-items: center;
+         font-size: 25px;
       }
 
       p{
@@ -137,19 +143,27 @@
     .profile-content{
          display: flex;
          flex-direction: row;
+         margin: 20px;
+         font-size: 15px;
       }
 
-    .profile {
+      .profile {
         width: 100%;
         height: auto;
         margin: 20px 0;
         overflow-x: auto;
         overflow-y: hidden;
+        white-space: nowrap;
+        display: inline-block;
+    }
+    
+    h3{
+        display: none;
     }
 
-    .picture {
-        height: 120px;
-        width: 120px;
+    h4 a{
+        margin-right: 20px;
+        text-align: center;
     }
 
     h4 {
@@ -186,10 +200,8 @@ h4{
 <body>
     <div class="profile" id="profile">
         <div class="profile-content">
-           <div class="picture">
-           </div>
+           <h3>BUDGET BUDDY</h3>
            <h4><a href="dashboard.html"> Dashboard </a></h4>
-           <h4><a href="profile.html"> Profile </a></h4>
            <h4><a href="expenses.html"> Expenses</a></h4>
            <h4><a href="income.html"> Income </a></h4>
            <h4><a href="settings.html"> Settings </a></h4>
@@ -215,7 +227,13 @@ h4{
         <h3>BudgetBuddy tips and tricks</h3>
             <p>Make it a habit to log every expense you have on your free time, so you would never forget to
                and get lost track at your budgeting. BudgetBuddy saves every log you made and you can freely edit or 
-            delete </p>
+            delete with an intuitive interface and powerful features, it makes budgeting, 
+            tracking spending, and managing income easier than ever. Whether you’re monitoring your day-to-day expenses, 
+            planning for a big purchase, or simply trying to save more. </p>
+            <p> Establish monthly limitsfor each category. BudgetBuddy can help you track your
+                 progress and alert you when you’re nearing your limit. Use BudgetBuddy to set short
+                  and long-term financial goals. Whether it’s saving for a vacation or paying off debt, 
+                  tracking your progress can motivate you to stay on course.</p>
         <div class="section"></div>
       </div>
 

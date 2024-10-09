@@ -9,22 +9,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&display=swap" rel="stylesheet">   
 </head>
 <style>
-     *{ 
-        box-sizing: border-box;
+
+body {
+        min-height: 100vh;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom right , #8dab7f, #788c63, #145b26);
+        font-family: "Glegoo", serif;
+        font-weight: 700;
+        font-style: normal;
+        
+    
       }
 
-      body{
-         height: 100%;
-         margin:10px 40px;
-         background: linear-gradient(to right , #8dab7f, #788c63, #145b26);
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         font-family: "Glegoo", serif;
-         font-weight: 700;
-         font-style: normal;
-      }
       .profile {
+        margin: 10px;
         display: flex;
         justify-content: center;
         border-radius: 20px; 
@@ -37,17 +38,17 @@
         animation: myAnim 1.6s ease 0s 1 normal none;
       }
 
-      .profile .picture {
-        height: 150px;
-        width: 150px;
-        background-color: rgb(222, 248, 227);
-        border-radius: 50%;
+      .profile h3{
+        font-size: 33px;
+        color: #145b26;
       }
+
 
       .profile h4{
        display: flex;
        justify-content: center;
        color: rgba(115,0,0,0.7);
+       margin: 30px 2px;
     
       }
 
@@ -78,6 +79,14 @@
         animation: myAnim 1.6s ease 0s 1 normal none;
       }
 
+      .section{
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        border-bottom: solid 2px rgb(102, 116, 103);
+
+      }
+
 
 
 
@@ -87,8 +96,12 @@
         width: 270px;
     }
 
-    h4{
-        font-size: 22px;
+    h3{
+        white-space: nowrap;
+    }
+
+    h4 a{ 
+        font-size: 19px;
     }
     .box {
         width: 700px;
@@ -111,6 +124,8 @@
     .profile-content{
          display: flex;
          flex-direction: row;
+         margin: 20px;
+         font-size: 15px;
       }
 
     .profile {
@@ -119,16 +134,17 @@
         margin: 20px 0;
         overflow-x: auto;
         overflow-y: hidden;
+        white-space: nowrap;
+        display: inline-block;
+    }
+    
+    h3{
+        display: none;
     }
 
-    .picture {
-        height: 120px;
-        width: 120px;
-    }
-
-    h4{
-        font-size: 20px;
-        margin: 10px;
+    h4 a{
+        margin-right: 20px;
+        text-align: center;
     }
 }
 
@@ -172,8 +188,7 @@
 <body>
     <div class="profile" id="profile">
         <div class="profile-content">
-           <div class="picture">
-           </div>
+           <h3>BUDGET BUDDY</h3>
            <h4><a href="dashboard.html"> Dashboard </a></h4>
          <h4><a href="profile.html"> Profile </a></h4>
          <h4><a href="expenses.html"> Expenses</a></h4>
@@ -185,6 +200,12 @@
       </div>
 
     <div class="box">
+        <div class="section">
+        <div class="download-file">
+            <h3> Download Entries</h3>
+            <h5> Download a text file of entries made in this account</h5>
+        </div>
+        </div>
 
     </div>
 </body>
