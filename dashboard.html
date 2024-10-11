@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&display=swap" rel="stylesheet">   
     <style>
+      
+     *{ 
+        box-sizing: border-box;
+      }
 
       body {
         min-height: 100vh;
@@ -16,7 +20,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(to bottom right , #8dab7f, #788c63, #145b26);
+        background: linear-gradient(135deg, rgba(229,233,241,1) 58%, rgba(119,129,224,1) 90%);
         font-family: "Glegoo", serif;
         font-weight: 700;
         font-style: normal;
@@ -28,16 +32,17 @@
         border-radius: 20px; 
         height: 750px;
         width: 330px;
-        background: linear-gradient(to left top, #779564, #90a97a, #aabe92, #c3d3aa, #dde9c3);
-        -webkit-box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7);
-        -moz-box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7); 
-        box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7);
+        background: #b7d7e3;
+        -webkit-box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7);
+        -moz-box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7); 
+        box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7);
         animation: myAnim 1.6s ease 0s 1 normal none;
       }
 
-      .profile h3{
-        font-size: 33px;
-        color: #145b26;
+      .profile img {
+        margin-top: 20px;
+        height: 150px;
+        width: 150px;
       }
 
 
@@ -57,18 +62,18 @@
       }
 
       .profile h4 a:hover {
-        color: #eaf4da;
+        color: #51ba87;
         transform: scale(1.2);
       }
 
       .stats-box {
         margin: 20px;
-        background-color: #c1cd88;
+        background-color: #7fbad9;
         border-radius: 30px;
         width: 800px;
-        -webkit-box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7);
-        -moz-box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7); 
-        box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7);
+        -webkit-box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7);
+        -moz-box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7); 
+        box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7);
         animation: myAnim 1.8s ease 0s 1 normal none;
       }
 
@@ -80,16 +85,8 @@
         height: 550px;
       }
 
-      .graph{
-        height: 400px;
-        width: 720px;
-        background-color: #f0fdb0;
-        border-radius: 20px;
-      }
-
-      .graph-box p{
-        font-size: 20px;
-        text-align: center;
+      canvas{
+        margin: 20px;
       }
 
       .record {
@@ -101,7 +98,7 @@
       .total {
         border-radius: 10px;
         font-size: 12px;
-        background-color: rgb(87, 192, 101);
+        background-color: #91dded;
         color: rgb(11, 31, 15);
         text-align: center;
         transition: transform 0.4s ease;
@@ -119,11 +116,11 @@
 
 
       .history .item {
-        margin: 15px;
+        margin: 10px;
         padding: 5px;
         border-radius: 10px;
         font-size: 12px;
-        background-color: rgb(48, 190, 67);
+        background-color: #5aa0a7;
         transition: transform 0.3s ease;
       }
 
@@ -149,10 +146,6 @@
 @media screen and (max-width: 1078) {
   .stats-box{
     width: 450px;
-  }
-
-  .h3{ 
-    white-space: nowrap;
   }
   
 }
@@ -182,7 +175,7 @@
         display: inline-block;
     }
     
-    h3{
+    img{
         display: none;
     }
 
@@ -238,7 +231,7 @@
   <body>
     <div class="profile" >
       <div class="d-flex flex-column justify-content-center align-items-center ">
-        <h3>BUDGET BUDDY</h3>
+        <img src="photos/BudgetBuddyLogo.png" alt="logo">
         <h4>
           <a href="dashboard.html">Dashboard</a>
         </h4>
@@ -262,8 +255,7 @@
 
     <div class="stats">
       <div class="stats-box graph-box">
-        <p>Graph</p>
-        <div class="graph"></div>
+        <canvas id="myBarChart" width="450" height="380"></canvas>
       </div>
 
       <div class="stats-box record">
@@ -289,5 +281,71 @@
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Data for the chart
+       window.onload = function() {
+            const ctx = document.getElementById('myBarChart').getContext('2d');
+            const myBarChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                    datasets: [{
+                        label: 'Savings',
+                        data: [1200, 1900, 3000, 5000, 2000, 2300, 1500],
+                        backgroundColor: [
+                            'rgba(119,129,224,0.7)',
+                             'rrgba(184, 190, 130, 0.7)',
+                             'rgba(119,129,224,0.7)',
+                             'rgba(184, 190, 130, 0.7)',
+                             'rgba(119,129,224,0.7)',
+                             'rgba(184, 190, 130, 0.7)',
+                             'rgba(119,129,224,0.7)',
+                        ],
+                        borderColor: [
+                            'rgba(119,129,224,0.7)',
+                            'rgba(184, 190, 130, 0.7)',
+                            'rgba(119,129,224,0.7)',
+                            'rgba(184, 190, 130, 0.7)',
+                            'rgba(119,129,224,0.7)',
+                            'rgba(184, 190, 130, 0.7)',
+                            'rgba(119,129,224,0.7)',
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            grid: {
+                              display: true,
+                              color: 'rgba(0,0,0,0.2)',
+                              lineWidth: 1.5,
+                              borderDash: [5, 5],
+                            },
+                            beginAtZero: true,
+                            ticks: {
+                
+                                font: {
+                                    family: 'Arial',
+                                    size: 16, 
+                                    weight: 'bold', 
+                                }
+                            }
+                        },
+                        x: {
+                          grid:{
+                            display: true,
+                            color: 'rgba(0,0,0,0.2)',
+                            lineWidth: 1,
+                            drawBorder: true,
+                          }
+                        }
+                    }
+                }
+            });
+        };
+    </script>
   </body>
 </html>

@@ -9,21 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&display=swap" rel="stylesheet">   
 </head>
 <style>
+    *{ 
+        box-sizing: border-box;
+    }
 
-body {
+    body {
         min-height: 100vh;
         margin: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(to bottom right , #8dab7f, #788c63, #145b26);
+        background: linear-gradient(135deg, rgba(229,233,241,1) 58%, rgba(119,129,224,1) 90%);
         font-family: "Glegoo", serif;
         font-weight: 700;
         font-style: normal;
-        
-    
       }
-
       .profile {
         margin: 10px;
         display: flex;
@@ -31,16 +31,17 @@ body {
         border-radius: 20px; 
         height: 750px;
         width: 330px;
-        background: linear-gradient(to left top, #779564, #90a97a, #aabe92, #c3d3aa, #dde9c3);
-        -webkit-box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7);
-        -moz-box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7); 
-        box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7);
+        background: #b7d7e3;
+        -webkit-box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7);
+        -moz-box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7); 
+        box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7);
         animation: myAnim 1.6s ease 0s 1 normal none;
       }
 
-      .profile h3{
-        font-size: 33px;
-        color: #145b26;
+      .profile img {
+        margin-top: 20px;
+        height: 150px;
+        width: 150px;
       }
 
 
@@ -53,42 +54,38 @@ body {
       }
 
       .profile h4 a {
-        font-size: 24px;
+        font-size: 28px;
         text-decoration: none;
         color: rgb(11, 31, 15);
         transition: color 0.6s ease, transform 0.4s ease;
       }
 
       .profile h4 a:hover {
-        color: #eaf4da;
+        color: #51ba87;
         transform: scale(1.2);
       }
 
       .box{
         height: 770px;
         width: 940px;
-        background-color: #c1cd88;
+        background-color: #7fbad9;
         display: flex;
         flex-direction: column;
         margin: 50px;
         padding: 20px;
         border-radius: 30px;
-        -webkit-box-shadow: 14px 10px 5px 1px rgba(0,0,0,0.54);
-        -moz-box-shadow: 14px 10px 5px 1px rgba(0,0,0,0.54);
-        box-shadow: 14px 10px 5px 1px rgba(0,0,0,0.54); 
+        -webkit-box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7);
+        -moz-box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7); 
+        box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7);
         animation: myAnim 1.6s ease 0s 1 normal none;
       }
-
       .section{
         display: flex;
         flex-direction: row;
         padding: 10px;
-        border-bottom: solid 2px rgb(102, 116, 103);
+        border-bottom: solid 2px rgb(56, 69, 97);
 
       }
-
-
-
 
 
       @media screen and (max-width: 1024px) {
@@ -138,7 +135,7 @@ body {
         display: inline-block;
     }
     
-    h3{
+    img{
         display: none;
     }
 
@@ -188,9 +185,8 @@ body {
 <body>
     <div class="profile" id="profile">
         <div class="profile-content">
-           <h3>BUDGET BUDDY</h3>
-           <h4><a href="dashboard.html"> Dashboard </a></h4>
-         <h4><a href="profile.html"> Profile </a></h4>
+           <img src="photos/BudgetBuddyLogo.png" alt="logo">
+        <h4><a href="dashboard.html"> Dashboard </a></h4>
          <h4><a href="expenses.html"> Expenses</a></h4>
          <h4><a href="income.html"> Income </a></h4>
          <h4><a href="settings.html"> Settings </a></h4>

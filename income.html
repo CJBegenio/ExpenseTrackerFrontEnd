@@ -12,58 +12,62 @@
         box-sizing: border-box;
       }
 
-      body{
-         height: 100%;
-         margin:10px 40px;
-         background: linear-gradient(to right , #8dab7f, #788c63, #145b26);
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         font-family: "Glegoo", serif;
-         font-weight: 700;
-         font-style: normal;
+      body {
+        min-height: 100vh;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, rgba(229,233,241,1) 58%, rgba(119,129,224,1) 90%);
+        font-family: "Glegoo", serif;
+        font-weight: 700;
+        font-style: normal;
       }
       .profile {
+        margin: 10px;
         display: flex;
         justify-content: center;
         border-radius: 20px; 
         height: 750px;
         width: 330px;
-        background: linear-gradient(to left top, #779564, #90a97a, #aabe92, #c3d3aa, #dde9c3);
-        -webkit-box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7);
-        -moz-box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7); 
-        box-shadow: 0px 14px 5px 0px rgba(115,0,0,0.7);
+        background: #b7d7e3;
+        -webkit-box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7);
+        -moz-box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7); 
+        box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7);
         animation: myAnim 1.6s ease 0s 1 normal none;
       }
 
-      .profile h3{
-        font-size: 33px;
-        color: #145b26;
+      .profile img {
+        margin-top: 20px;
+        height: 150px;
+        width: 150px;
       }
+
 
       .profile h4{
        display: flex;
        justify-content: center;
        color: rgba(115,0,0,0.7);
+       margin: 30px 2px;
     
       }
 
       .profile h4 a {
-        font-size: 24px;
+        font-size: 28px;
         text-decoration: none;
         color: rgb(11, 31, 15);
         transition: color 0.6s ease, transform 0.4s ease;
       }
 
       .profile h4 a:hover {
-        color: #eaf4da;
+        color: #51ba87;
         transform: scale(1.2);
       }
 
       .box{
         height: 770px;
         width: 940px;
-        background-color: #c1cd88;
+        background-color: #7fbad9;
         display: flex;
         flex-direction: column;
         margin: 50px;
@@ -75,7 +79,6 @@
         animation: myAnim 1.6s ease 0s 1 normal none;
       }
 
-
       .income-title{
         display: flex;
         flex-direction: column;
@@ -83,8 +86,8 @@
         font-size: 28px;
         width: auto;
         height: 45px;
-        background-color: cornsilk;
-        border: 5px solid cornsilk;
+        background-color: #d4ecf1;
+        border: 5px solid #d4ecf1;
         border-radius: 10px;
       }
 
@@ -109,7 +112,7 @@
         margin: 15px;
         border-radius: 10px;
         border: none;
-        background-color: beige;
+        background-color: #d4ecf1;
         font-family: "Glegoo", serif;
         font-weight: 700;
         font-style: normal;
@@ -129,7 +132,7 @@
         border-radius: 10px;
         border: none;
         resize: none;
-        background-color: beige;
+        background-color: #d4ecf1;
         font-family: "Glegoo", serif;
         font-weight: 700;
         font-style: normal;
@@ -152,7 +155,7 @@
         flex-direction: row;
         width: 490px;
         height: 510px;
-        border: 2px solid cornsilk;
+        border: 2px solid #d4ecf1;
         border-radius: 9px;
 
       }
@@ -174,7 +177,7 @@
 
     /* Modal content */
     .modal-content {
-        background-color: #fff;
+        background-color: #e6faa1;
         margin: 15% auto;
         padding: 20px;
         border: 1px solid #888;
@@ -203,6 +206,28 @@
             color: red;
             font-size: 14px;
         }
+
+        .confirm-button,
+        .cancel-button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            font-family: "Gleego", sans-serif;
+        }
+
+        .confirm-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .cancel-button {
+            background-color: #f44336;
+            color: white;
+        }
+
 
 
       @keyframes myAnim {
@@ -264,7 +289,7 @@
         display: inline-block;
     }
     
-    h3{
+    img{
         display: none;
     }
 
@@ -300,9 +325,8 @@
 <body>
     <div class="profile" id="profile">
         <div class="profile-content">
-           <h3>BUDGET BUDDY</h3>
+          <img src="photos/BudgetBuddyLogo.png" alt="logo">
            <h4><a href="dashboard.html"> Dashboard </a></h4>
-           <h4><a href="profile.html"> Profile </a></h4>
            <h4><a href="expenses.html"> Expenses</a></h4>
            <h4><a href="income.html"> Income </a></h4>
            <h4><a href="settings.html"> Settings </a></h4>
@@ -325,7 +349,20 @@
             <div class="query-income">
             </div>
         </div>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+              <span class="close" onclick="closePopup()">&times;</span>
+              <p id="popupText"></p>
+          </div>
+      </div>
         <p id="errorMessage" class="error"></p>
+        <div id="confirmationModal" class="modal">
+          <div class="modal-content">
+              <p>Would you like to go ahead and submit? Or review the datails first?</p>
+              <button class="confirm-button" onclick="confirmSubmission()">Confirm</button>
+              <button class="cancel-button" onclick="cancelConfirmation()">Cancel</button>
+          </div>
+      </div>
     </div>
 
  <script>
@@ -359,26 +396,51 @@
         var amount = document.getElementById("incomeAmount").value;
         var date = document.getElementById("incomeDate").value;
         var desc = document.getElementById("incomeDesc").value;
-        var decimalRegex = /^[0-9]+(\.[0-9]+)?$/;
 
         // Check if the input is not empty
-        if (title && amount && date && desc) {
-            // Show the modal
+          // Validate inputs
+          if (!title || !date || !desc|| !amount ||!validateInputs()) {
             var modal = document.getElementById("myModal");
             modal.style.display = "block";
-            
-            // Display the input inside the modal
-            document.getElementById("popupText").innerHTML = "Added Successfully";
 
-            clearTextboxes();
+           document.getElementById("popupText").innerHTML = "Please fill all fields"; // Alert if any input is invalid
+                return;
+            }
 
-        } else {
-          var modal = document.getElementById("myModal");
-          modal.style.display = "block";
-
-           document.getElementById("popupText").innerHTML = "Please fill all fields";
-        }
+            // Show a confirmation dialog before displaying the modal
+            var confirmationModal =  document.getElementById("confirmationModal");
+            confirmationModal.style.display = "block";
     }
+
+    function confirmSubmission() {
+            // Get the values from multiple input fields
+        var title = document.getElementById("incomeTitle").value;
+        var amount = document.getElementById("incomeAmount").value;
+        var date = document.getElementById("incomeDate").value;
+        var desc = document.getElementById("incomeDesc").value;
+
+            // Hide the confirmation modal
+            var confirmationModal = document.getElementById("confirmationModal");
+            confirmationModal.style.display = "none";
+
+            // Show the main modal with input details
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+
+            // Display the input values inside the modal
+            var message = "Income recorded"
+            document.getElementById("popupText").innerHTML = message;
+
+            // Clear the textboxes after showing the modal
+            clearTextboxes();
+        }
+
+        // Function to cancel the confirmation
+        function cancelConfirmation() {
+            // Hide the confirmation modal
+            var confirmationModal = document.getElementById("confirmationModal");
+            confirmationModal.style.display = "none";
+        }
 
     // Function to close the modal
     function closePopup() {
