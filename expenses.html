@@ -282,10 +282,33 @@ body {
         display: inline-block;
     }
 
+    .profile::-webkit-scrollbar {
+        width: 20px;
+        height:fit-content;
+      }
+
+      .profile::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        width: 50px;
+        background-color: #8d989b;
+
+      }
+
+      .profile::-webkit-scrollbar-track {
+            background: transparent;
+
+        }
+
+        .profile::-webkit-scrollbar-hover {
+            background: #8d989b
+        }
+
     .box{
       display: flex;
 
     }
+
+
     
     img{
         display: none;

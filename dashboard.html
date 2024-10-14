@@ -152,6 +152,27 @@
 
       @media screen and (max-width: 758px) {
 
+        .profile::-webkit-scrollbar {
+        width: 20px;
+        height:fit-content;
+      }
+
+      .profile::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        width: 50px;
+        background-color: #8d989b;
+
+      }
+
+      .profile::-webkit-scrollbar-track {
+            background: transparent;
+
+        }
+
+        .profile::-webkit-scrollbar-hover {
+            background: #8d989b
+        }
+
         body {
           display: flex;
           flex-direction: column;
@@ -189,14 +210,14 @@
           justify-content: center;
           align-items: center;
           margin: 15px;
-          width: 350px;
+          width: 378px;
         }
         
         .graph-box{
           flex-direction: column;
           display: flex;
           justify-content: center;
-          width: 378px;
+          
         
 
         }
