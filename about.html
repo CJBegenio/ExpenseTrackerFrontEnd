@@ -78,7 +78,26 @@
         box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7);
         animation: myAnim 1.6s ease 0s 1 normal none;
         overflow-y: scroll;
+        box-sizing: border-box;
       }
+
+      .box::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      .box::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+      }
+
+      .box::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .box::-webkit-scrollbar-hover {
+            background: transparent;
+        }
+
+
 
       .section{
          display: flex;
@@ -170,6 +189,11 @@
         margin: 10px;
     }
 
+    ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
     title{
          font-size: 21px;
       }
@@ -232,7 +256,7 @@ h4{
                Join us today and start your journey towards financial freedom! </p>
 
         </div>
-        <div class="section"></div>
+        <div class="section">
         <h5 class="title"> BudgetBuddy tips and tricks</h5>
             <p>Make it a habit to log every expense you have on your free time, so you would never forget to
                and get lost track at your budgeting. BudgetBuddy saves every log you made and you can freely edit or 
@@ -243,7 +267,7 @@ h4{
                  progress and alert you when you’re nearing your limit. Use BudgetBuddy to set short
                   and long-term financial goals. Whether it’s saving for a vacation or paying off debt, 
                   tracking your progress can motivate you to stay on course.</p>
-        <div class="section"></div>
+        </div>
       </div>
 
 
