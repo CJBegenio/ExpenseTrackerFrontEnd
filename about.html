@@ -78,7 +78,31 @@
         box-shadow: 0px 14px 5px 0px rgba(11, 31, 66, 0.7);
         animation: myAnim 1.6s ease 0s 1 normal none;
         overflow-y: scroll;
+        box-sizing: border-box;
       }
+
+      .box::-webkit-scrollbar {
+        width: 12px;
+        height:fit-content;
+      }
+
+      .box::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        height:90px;
+        background-color:  #3c545a;
+
+      }
+
+      .box::-webkit-scrollbar-track {
+            background: transparent;
+
+        }
+
+        .box::-webkit-scrollbar-hover {
+            background: #3c545a;
+        }
+
+
 
       .section{
          display: flex;
@@ -155,7 +179,29 @@
         white-space: nowrap;
         display: inline-block;
     }
+
+
     
+      .profile::-webkit-scrollbar {
+        width: 20px;
+        height:fit-content;
+      }
+
+      .profile::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        width: 50px;
+        background-color: #8d989b;
+
+      }
+
+      .profile::-webkit-scrollbar-track {
+            background: transparent;
+
+        }
+
+        .profile::-webkit-scrollbar-hover {
+            background: #8d989b
+        }
     img{
         display: none;
     }
@@ -169,6 +215,11 @@
         font-size: 20px;
         margin: 10px;
     }
+
+    ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
 
     title{
          font-size: 21px;
@@ -230,7 +281,6 @@ h4{
                paying off debt, or just looking to stay on top of your daily spending, 
                BudgetBuddy is here to help you every step of the way.
                Join us today and start your journey towards financial freedom! </p>
-
         </div>
         <div class="section"></div>
         <h5 class="title"> BudgetBuddy tips and tricks</h5>
@@ -244,6 +294,7 @@ h4{
                   and long-term financial goals. Whether it’s saving for a vacation or paying off debt, 
                   tracking your progress can motivate you to stay on course.</p>
         <div class="section"></div>
+      </div>
       </div>
 
 
